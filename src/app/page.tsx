@@ -3,7 +3,7 @@
 import { useRouter } from "next/navigation";
 import * as React from "react";
 import { useContextDefault } from "@/context/Context";
-import AnimatedText from "./animations/animatedText";
+import Image from "next/image";
 
 const Home: React.FC = () => {
   const router = useRouter();
@@ -11,16 +11,32 @@ const Home: React.FC = () => {
   const setSubmenuAndSelected = context?.setSubmenuAndSelected;
 
   const handleClick = () => {
-    setSubmenuAndSelected?.("/project-name", ""); // Set state before navigation
-    router.push("/project-name"); // Redireciona para a página de localização
+    setSubmenuAndSelected?.("/vega-mangalo", ""); // Set state before navigation
+    router.push("/vega-mangalo"); // Redireciona para a página de localização
   };
 
   return (
     <div
-      className="w-fulll h-screen bg-institucional overflow-hidden min-h-[800px] min-w-[1200px] flex justify-center items-center"
-      onClick={handleClick}
+      className="w-fulll h-screen bg-descanso bg-cover grid grid-cols-24 grid-rows-24 overflow-hidden min-h-[800px] min-w-[1200px]"
     >
-      <AnimatedText text="Crie sua primeira experiência" />
+      <div className=" col-span-8 row-span-12 col-start-9 row-start-6 relative">
+        <Image
+          src="/descanso/logo.png"
+          alt="Logo Descanso"
+          fill
+          className="object-contain"
+        />
+      </div>
+      <div onClick={() => {
+        handleClick();
+      }} className="col-span-4 row-span-3 row-start-20 animate-pulse col-start-11 relative cursor-pointer hover:scale-105 transition-all">
+        <Image
+          src="/descanso/touch.png"
+          fill
+          alt="TouchButton"
+          className="object-contain"
+        />
+      </div>
     </div>
   );
 };

@@ -20,7 +20,7 @@ const Submenu: React.FC = memo(function Submenu() {
   }, [pathname]);
   
   return (
-    <div className={`col-start-6 row-span-1 row-start-23 col-span-19 flex justify-evenly items-center gap-20 px-12 animate-fade-right animate-duration-[2500ms] ${menuStructure[indexSelected].submenuElements.length === 1 && "hidden"}`}>
+    <div className={`col-start-8 row-span-3 col-span-19 flex justify-center bg-[#00978C] items-center gap-20 animate-fade-right animate-duration-[2500ms] ${menuStructure[indexSelected].submenuElements.length === 1 && "hidden"}`}>
       {menuStructure[indexSelected].submenu.map((item, index) => {
         return (
           <button
@@ -31,17 +31,17 @@ const Submenu: React.FC = memo(function Submenu() {
               );
             }}
             key={item}
-            className={`w-full desktop:px-4 py-2 rounded-full border-2 border-personalizeorange  cursor-pointer ${
+            className={`w-[20%] py-2 rounded-xl border-3 border-white  cursor-pointer ${
               submenu === menuStructure[indexSelected].submenuElements[index]
-                ? "bg-black"
+                ? "bg-white"
                 : "hover:bg-second/20"
             }`}
           >
             <p
-              className={`text-center desktop:text-[1em] text-sm ${
+              className={`text-center uppercase font-bold desktop:text-[1em] text-[1em] ${
                 submenu === menuStructure[indexSelected].submenuElements[index]
-                  ? "text-white"
-                  : "text-menu"
+                  ? "text-[#00978C]"
+                  : "text-white"
               }`}
             >
               {item}

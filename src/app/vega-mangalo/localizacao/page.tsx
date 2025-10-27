@@ -13,7 +13,7 @@ const LocalizacaoPage: React.FC = () => {
   return (
     <div className="w-full h-screen bg-background grid grid-cols-24 min-h-[800px] min-w-[1200px] grid-rows-24">
       <Menu />
-      <div className="col-span-19 row-span-22 grid grid-rows-24 grid-cols-19 overflow-hidden animate-fade animate-duration-[2000ms]">
+      <div className="col-span-17 row-span-21 grid grid-rows-24 grid-cols-19 overflow-hidden animate-fade animate-duration-[2000ms]">
         <div className="row-span-24 col-span-1" />
         <div className="row-span-3 col-span-17" />
         {submenu === "ultratour" && (
