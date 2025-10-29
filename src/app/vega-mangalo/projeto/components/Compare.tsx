@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import Image from 'next/image';
+import React, { useState } from "react";
+import Image from "next/image";
 
 interface ImageSet {
     src: string; 
@@ -25,7 +25,7 @@ const Compare: React.FC = () => {
     const [leftImageSrc, setLeftImageSrc] = useState<string>(PLACEHOLDER_SRC); 
     const [rightImageSrc, setRightImageSrc] = useState<string>(PLACEHOLDER_SRC); 
     
-    const [activeButton, setActiveButton] = useState<'left' | 'right'>('left'); 
+    const [activeButton, setActiveButton] = useState<"left" | "right">("left"); 
 
 
     const handleButtonClick = (imageSet: ImageSet) => {
@@ -33,25 +33,25 @@ const Compare: React.FC = () => {
         
         if (targetSrc === leftImageSrc) {
             setLeftImageSrc(PLACEHOLDER_SRC);
-            setActiveButton('left'); 
+            setActiveButton("left"); 
             return;
         }
 
         if (targetSrc === rightImageSrc) {
             setRightImageSrc(PLACEHOLDER_SRC);
-            setActiveButton('right'); 
+            setActiveButton("right"); 
             return;
         }
 
-        if (activeButton === 'left') {
+        if (activeButton === "left") {
             setLeftImageSrc(targetSrc);
             if (rightImageSrc === PLACEHOLDER_SRC) {
-                 setActiveButton('right');
+                 setActiveButton("right");
             }
         } else { 
             setRightImageSrc(targetSrc);
             if (leftImageSrc === PLACEHOLDER_SRC) {
-                setActiveButton('left');
+                setActiveButton("left");
             }
         }
     };
@@ -65,30 +65,30 @@ const Compare: React.FC = () => {
 
 
     return (
-        <div className='col-span-17 row-span-20 grid grid-cols-17 grid-rows-20'>
-            <div className='col-span-15 row-span-12 row-start-2 col-start-2 bg-[#00978C] rounded-3xl flex justify-between items-center gap-8 p-6'>
+        <div className="col-span-17 row-span-20 grid grid-cols-17 grid-rows-20">
+            <div className="col-span-15 row-span-12 row-start-2 col-start-2 bg-[#00978C] rounded-3xl flex justify-between items-center gap-8 p-6">
                 
-                <div className='w-1/2 h-full flex relative flex-col justify-center items-center rounded-3xl bg-[#B3B3B3]'>
+                <div className="w-1/2 h-full flex relative flex-col justify-center items-center rounded-3xl bg-[#B3B3B3]">
                     <Image
                         src={leftImageSrc} 
                         fill
                         alt="Comparison Image Left"
-                        className={`object-contain pointer-events-none z-20 transition-opacity duration-300 ${leftImageSrc === PLACEHOLDER_SRC ? 'opacity-50' : 'opacity-100'}`}
+                        className={`object-contain pointer-events-none z-20 transition-opacity duration-300 ${leftImageSrc === PLACEHOLDER_SRC ? "opacity-50" : "opacity-100"}`}
                     />
                 </div>
                 
-                <div className='w-1/2 h-full flex relative flex-col justify-center items-center rounded-3xl bg-[#B3B3B3]'>
+                <div className="w-1/2 h-full flex relative flex-col justify-center items-center rounded-3xl bg-[#B3B3B3]">
                     <Image
                         src={rightImageSrc} 
                         fill
                         alt="Comparison Image Right"
-                        className={`object-contain pointer-events-none z-20 transition-opacity duration-300 ${rightImageSrc === PLACEHOLDER_SRC ? 'opacity-50' : 'opacity-100'}`}
+                        className={`object-contain pointer-events-none z-20 transition-opacity duration-300 ${rightImageSrc === PLACEHOLDER_SRC ? "opacity-50" : "opacity-100"}`}
                     />
                 </div>
             </div>
 
             <button 
-                className='col-span-3 row-span-5 col-start-2 row-start-15 relative'
+                className="col-span-3 row-span-5 col-start-2 row-start-15 relative"
                 onClick={() => handleButtonClick(ap1)} 
             >
                 <Image 
@@ -100,7 +100,7 @@ const Compare: React.FC = () => {
             </button>
             
             <button 
-                className='col-span-3 row-span-5 col-start-6 row-start-15 relative'
+                className="col-span-3 row-span-5 col-start-6 row-start-15 relative"
                 onClick={() => handleButtonClick(ap2)} 
             >
                 <Image
@@ -111,7 +111,7 @@ const Compare: React.FC = () => {
                 />
             </button> 
 
-            <div className='col-span-4 row-span-2 col-end-17 relative row-start-15'>
+            <div className="col-span-4 row-span-2 col-end-17 relative row-start-15">
                 <Image
                     src="/bolotario/compare/instrucao.svg"
                     alt="Legenda Compare"

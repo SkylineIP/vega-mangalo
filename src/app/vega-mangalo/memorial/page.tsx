@@ -1,11 +1,10 @@
-'use client'
-import React from 'react'
-import Menu from '../components/Menu'
-import Submenu from '../components/Submenu'
-import { useContextDefault } from '@/context/Context'
-import Image from 'next/image'
-import MemorialView from './components/MemorialView'
-import QuadroView from './components/QuadroView'
+"use client"
+import React from "react"
+import Menu from "../components/Menu"
+import Submenu from "../components/Submenu"
+import { useContextDefault } from "@/context/Context"
+import MemorialView from "./components/MemorialView"
+import QuadroView from "./components/QuadroView"
 
 const MemorialPage = () => {
     const context = useContextDefault();

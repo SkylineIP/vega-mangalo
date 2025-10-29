@@ -27,7 +27,6 @@ const MenuPage: React.FC = () => {
 
   const left = menuStructure.slice(0, 3);
   const right = menuStructure.slice(3, 6);
-  console.log(left, right);
 
   return (
     <div className="w-full h-full bg-menu bg-cover overflow-hidden relative min-h-[800px] min-w-[1200px] grid grid-cols-24 grid-rows-24">

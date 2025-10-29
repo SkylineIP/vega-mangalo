@@ -3,11 +3,8 @@
 import React, { useState } from "react";
 import Menu from "../components/Menu";
 import Image from "next/image";
-import { useContextDefault } from "@/context/Context";
 
 const ImagensPage: React.FC = () => {
-  const context = useContextDefault();
-  const setAbrirImagensTelaCheia = context?.setAbrirImagensTelaCheia;
   const [imageIndexToShow, setImageIndexToShow] = useState<number | null>(null);
   const imagens = [
     {

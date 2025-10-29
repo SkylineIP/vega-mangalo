@@ -1,11 +1,11 @@
-import React from 'react'
+import React from "react"
 
 interface BolotarioSvgProps {
     onGClick: (id: number) => void;
 }
 const BolotarioSvg = ({ onGClick }: BolotarioSvgProps) => {
     return (
-        <svg width="2400" height="1710" viewBox="0 0 2400 1710" fill="none" className='absolute top-0 right-0 w-full h-full z-10' xmlns="http://www.w3.org/2000/svg">
+        <svg width="2400" height="1710" viewBox="0 0 2400 1710" fill="none" className="absolute top-0 right-0 w-full h-full z-10" xmlns="http://www.w3.org/2000/svg">
             <g id="Frame">
                 <g id="Group 1086">
                     <g id="Group">
@@ -28,7 +28,7 @@ const BolotarioSvg = ({ onGClick }: BolotarioSvgProps) => {
                             </g>
                         </g>
                     </g>
-                    <g id="1" onClick={() => onGClick(1)} className='cursor-pointer'>
+                    <g id="1" onClick={() => onGClick(1)} className="cursor-pointer">
                         <g id="Group_3">
                             <g id="Clip path group_2">
                                 <mask id="mask1_2061_5984" style={{ maskType: "luminance" }} maskUnits="userSpaceOnUse" x="2006" y="514" width="58" height="58">
@@ -69,7 +69,7 @@ const BolotarioSvg = ({ onGClick }: BolotarioSvgProps) => {
                             </g>
                         </g>
                     </g>
-                    <g id="2" onClick={() => onGClick(2)} className='cursor-pointer'>
+                    <g id="2" onClick={() => onGClick(2)} className="cursor-pointer">
                         <g id="Group_7">
                             <g id="Clip path group_4">
                                 <mask id="mask3_2061_5984" style={{ maskType: "luminance" }} maskUnits="userSpaceOnUse" x="2003" y="582" width="65" height="58">
@@ -107,7 +107,7 @@ const BolotarioSvg = ({ onGClick }: BolotarioSvgProps) => {
                             </g>
                         </g>
                     </g>
-                    <g id="3" onClick={() => onGClick(3)} className='cursor-pointer'>
+                    <g id="3" onClick={() => onGClick(3)} className="cursor-pointer">
                         <g id="Group_11">
                             <g id="Clip path group_6">
                                 <mask id="mask5_2061_5984" style={{ maskType: "luminance" }} maskUnits="userSpaceOnUse" x="2002" y="650" width="66" height="58">
@@ -151,7 +151,7 @@ const BolotarioSvg = ({ onGClick }: BolotarioSvgProps) => {
                             </g>
                         </g>
                     </g>
-                    <g id="4" onClick={() => onGClick(4)} className='cursor-pointer'>
+                    <g id="4" onClick={() => onGClick(4)} className="cursor-pointer">
                         <g id="Group_15">
                             <g id="Clip path group_8">
                                 <mask id="mask7_2061_5984" style={{ maskType: "luminance" }} maskUnits="userSpaceOnUse" x="2002" y="717" width="67" height="59">
@@ -189,7 +189,7 @@ const BolotarioSvg = ({ onGClick }: BolotarioSvgProps) => {
                             </g>
                         </g>
                     </g>
-                    <g id="5" onClick={() => onGClick(5)} className='cursor-pointer'>
+                    <g id="5" onClick={() => onGClick(5)} className="cursor-pointer">
                         <g id="Group_19" opacity="0.3">
                             <g id="Clip path group_10">
                                 <mask id="mask9_2061_5984" style={{ maskType: "luminance" }} maskUnits="userSpaceOnUse" x="2002" y="785" width="67" height="59">
@@ -230,7 +230,7 @@ const BolotarioSvg = ({ onGClick }: BolotarioSvgProps) => {
                             </g>
                         </g>
                     </g>
-                    <g id="6" onClick={() => onGClick(6)} className='cursor-pointer'>
+                    <g id="6" onClick={() => onGClick(6)} className="cursor-pointer">
                         <g id="Group_23">
                             <g id="Clip path group_12">
                                 <mask id="mask11_2061_5984" style={{ maskType: "luminance" }} maskUnits="userSpaceOnUse" x="2002" y="853" width="66" height="58">
@@ -269,7 +269,7 @@ const BolotarioSvg = ({ onGClick }: BolotarioSvgProps) => {
                             </g>
                         </g>
                     </g>
-                    <g id="7" onClick={() => onGClick(7)} className='cursor-pointer'>
+                    <g id="7" onClick={() => onGClick(7)} className="cursor-pointer">
                         <g id="Group_27" opacity="0.3">
                             <g id="Clip path group_14">
                                 <mask id="mask13_2061_5984" style={{ maskType: "luminance" }} maskUnits="userSpaceOnUse" x="2004" y="920" width="63" height="59">
@@ -305,7 +305,7 @@ const BolotarioSvg = ({ onGClick }: BolotarioSvgProps) => {
                             </g>
                         </g>
                     </g>
-                    <g id="8" onClick={() => onGClick(8)} className='cursor-pointer'>
+                    <g id="8" onClick={() => onGClick(8)} className="cursor-pointer">
                         <g id="Group_31" opacity="0.3">
                             <g id="Clip path group_16">
                                 <mask id="mask15_2061_5984" style={{ maskType: "luminance" }} maskUnits="userSpaceOnUse" x="2002" y="988" width="67" height="58">
@@ -350,7 +350,7 @@ const BolotarioSvg = ({ onGClick }: BolotarioSvgProps) => {
                             </g>
                         </g>
                     </g>
-                    <g id="9" onClick={() => onGClick(9)} className='cursor-pointer'>
+                    <g id="9" onClick={() => onGClick(9)} className="cursor-pointer">
                         <g id="Group_35">
                             <g id="Clip path group_18">
                                 <mask id="mask17_2061_5984" style={{ maskType: "luminance" }} maskUnits="userSpaceOnUse" x="2002" y="1056" width="66" height="58">
@@ -391,7 +391,7 @@ const BolotarioSvg = ({ onGClick }: BolotarioSvgProps) => {
                             </g>
                         </g>
                     </g>
-                    <g id="10" onClick={() => onGClick(10)} className='cursor-pointer'>
+                    <g id="10" onClick={() => onGClick(10)} className="cursor-pointer">
                         <g id="Group_39">
                             <g id="Clip path group_20">
                                 <mask id="mask19_2061_5984" style={{ maskType: "luminance" }} maskUnits="userSpaceOnUse" x="2006" y="1124" width="58" height="58">
@@ -430,7 +430,7 @@ const BolotarioSvg = ({ onGClick }: BolotarioSvgProps) => {
                             </g>
                         </g>
                     </g>
-                    <g id="11" onClick={() => onGClick(11)} className='cursor-pointer'>
+                    <g id="11" onClick={() => onGClick(11)} className="cursor-pointer">
                         <g id="Group_47">
                             <g id="Clip path group_24">
                                 <mask id="mask23_2061_5984" style={{ maskType: "luminance" }} maskUnits="userSpaceOnUse" x="2008" y="1191" width="55" height="58">
@@ -466,7 +466,7 @@ const BolotarioSvg = ({ onGClick }: BolotarioSvgProps) => {
                             </g>
                         </g>
                     </g>
-                    <g id="12" onClick={() => onGClick(12)} className='cursor-pointer'>
+                    <g id="12" onClick={() => onGClick(12)} className="cursor-pointer">
                         <g id="Group_43">
                             <g id="Clip path group_22">
                                 <mask id="mask21_2061_5984" style={{ maskType: "luminance" }} maskUnits="userSpaceOnUse" x="2008" y="1259" width="55" height="59">

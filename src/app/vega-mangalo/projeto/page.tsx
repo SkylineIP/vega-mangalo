@@ -29,15 +29,15 @@ const ProjetoPage: React.FC = () => {
     ]
 
     const RESPONSIVE_POSITIONS: { [key: number]: { top: string, left: string } } = {
-        1: { top: '20%', left: '48%' },
-        2: { top: '27%', left: '44.9%' },
-        3: { top: '30%', left: '50.1%' },
-        4: { top: '32%', left: '45.8%' },
-        6: { top: '39%', left: '47.4%' },
-        9: { top: '45%', left: '47.8%' },
-        10: { top: '57%', left: '47.6%' },
-        11: { top: '46%', left: '48%' },
-        12: { top: '50%', left: '46%' },
+        1: { top: "20%", left: "48%" },
+        2: { top: "27%", left: "44.9%" },
+        3: { top: "30%", left: "50.1%" },
+        4: { top: "32%", left: "45.8%" },
+        6: { top: "39%", left: "47.4%" },
+        9: { top: "45%", left: "47.8%" },
+        10: { top: "57%", left: "47.6%" },
+        11: { top: "46%", left: "48%" },
+        12: { top: "50%", left: "46%" },
     };
 
     const handleClick = (index: number) => {
@@ -63,7 +63,7 @@ const ProjetoPage: React.FC = () => {
                             <div className="w-full h-full relative">
                                 <div
                                     style={{
-                                        position: 'absolute',
+                                        position: "absolute",
                                         top: targetPosition?.top,
                                         left: targetPosition?.left,
                                         zIndex: 30,

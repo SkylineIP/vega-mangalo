@@ -1,5 +1,5 @@
-import React from 'react'
-import Image from 'next/image';
+import React from "react"
+import Image from "next/image";
 
 const Apartamentos = () => {
     const [currentImage, setCurrentImage] = React.useState<string>("/bolotario/apartamentos/centro.png");
@@ -22,8 +22,8 @@ const Apartamentos = () => {
         }
     ]
   return (
-    <div className='  col-span-17 row-span-20 grid grid-cols-17 grid-rows-20'>
-        <div className='col-span-15 row-span-16 col-start-2 row-start-2 relative'>
+    <div className="  col-span-17 row-span-20 grid grid-cols-17 grid-rows-20">
+        <div className="col-span-15 row-span-16 col-start-2 row-start-2 relative">
             <Image
                 src={currentImage}
                 alt="Destaque Imagem"
@@ -31,14 +31,14 @@ const Apartamentos = () => {
                 className="object-contain"
             />
         </div>
-        <div className='col-span-15 col-start-2 row-end-20 flex justify-between items-center'>
+        <div className="col-span-15 col-start-2 row-end-20 flex justify-between items-center">
             {buttons.map((button, index) => (
                 <button
                     key={index}
                     onClick={() => setCurrentImage(button.src)}
                     style={{
-                        backgroundColor: currentImage === button.src ? '#00978C' : 'white',
-                        color: currentImage === button.src ? 'white' : '#00978C',
+                        backgroundColor: currentImage === button.src ? "#00978C" : "white",
+                        color: currentImage === button.src ? "white" : "#00978C",
                     }}
                     className={`bg-white text-[#00978C] border-2 font-bold border-[#00978C] px-8 py-2 rounded-lg hover:bg-[#00978C] hover:text-white transition-all duration-300`}
                 >

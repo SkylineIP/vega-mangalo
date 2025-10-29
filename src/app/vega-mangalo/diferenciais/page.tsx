@@ -1,9 +1,9 @@
-'use client'
-import React from 'react'
-import Menu from '../components/Menu'
-import Submenu from '../components/Submenu'
-import { useContextDefault } from '@/context/Context'
-import Image from 'next/image'
+"use client"
+import React from "react"
+import Menu from "../components/Menu"
+import Submenu from "../components/Submenu"
+import { useContextDefault } from "@/context/Context"
+import Image from "next/image"
 
 const DiferenciaisPage = () => {
     const context = useContextDefault();
@@ -18,7 +18,7 @@ const DiferenciaisPage = () => {
                             src="/diferenciais/apartamento.png"
                             alt="Apartamentos"
                             fill
-                            className='object-contain'
+                            className="object-contain"
                         />
                     </div>
                 )}
@@ -28,7 +28,7 @@ const DiferenciaisPage = () => {
                             src="/diferenciais/area-comum.png"
                             alt="Apartamentos"
                             fill
-                            className='object-contain'
+                            className="object-contain"
                         />
                     </div>
                 )}
