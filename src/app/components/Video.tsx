@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { forwardRef, useImperativeHandle, useRef, useState } from "react";
 import { IconButton } from "@mui/material";
 import {
   PlayArrow,
@@ -18,9 +18,15 @@ import Slider from "@mui/material/Slider";
 interface VideosProps {
   thumb: string;
   videoSrc: string;
+  noControls?: boolean;
 }
+export type VideoControls = {
+  play: () => void;
+  pause: () => void;
+  rewind: () => void;
+};
 
-const Videos: React.FC<VideosProps> = ({ thumb, videoSrc }) => {
+const Videos = forwardRef<VideoControls, VideosProps>(({ thumb, videoSrc, noControls }, ref) => {
   // Referência para o elemento de vídeo
   const videoRef = useRef<HTMLVideoElement | null>(null);
 
@@ -121,11 +127,29 @@ const Videos: React.FC<VideosProps> = ({ thumb, videoSrc }) => {
     }
   };
 
+  useImperativeHandle(ref, () => ({
+    play: () => {
+      if (videoRef.current) {
+        videoRef.current.play();
+        setPlaying(true);
+      }
+    },
+    pause: () => {
+      if (videoRef.current) {
+        videoRef.current.pause();
+        setPlaying(false);
+      }
+    },
+    rewind: () => {
+      if (videoRef.current) videoRef.current.currentTime = 0;
+    },
+  }));
+
   return (
     <div
       className={`${
         isFullscreen && !showControls ? "cursor-none" : "cursor-auto"
-      } w-full h-full rounded-2xl border-2 border-personalizeorange overflow-hidden relative`}
+      } w-full h-full  overflow-hidden relative`}
       ref={containerRef}
       onMouseMove={handleMouseMove}
     >
@@ -142,9 +166,9 @@ const Videos: React.FC<VideosProps> = ({ thumb, videoSrc }) => {
         onLoadedMetadata={() => setDuration(videoRef.current?.duration || 0)}
       />
       {/* Overlay dos controles */}
-      {showControls && (
+      {showControls && !noControls && (
         <div
-          className="absolute bottom-2 left-2 right-2 flex flex-col items-center justify-between bg-[#2824B4]/80 p-2 mx-12 rounded-lg z-50 "
+          className="absolute bottom-2 left-2 right-2 flex flex-col items-center justify-between bg-[#16555A]/80 p-2 mx-12 rounded-lg z-50 "
           onMouseLeave={() => setShowVolumeSlider(false)}
         >
           {/* Slider de progresso */}
@@ -154,7 +178,7 @@ const Videos: React.FC<VideosProps> = ({ thumb, videoSrc }) => {
               min={0}
               max={duration}
               step={1}
-              style={{ color: "#80FFF8" }}
+              style={{ color: "#FAEDD4" }}
               onChange={(_, value) => {
                 const newTime = typeof value === "number" ? value : value[0];
                 setCurrentTime(newTime);
@@ -193,7 +217,7 @@ const Videos: React.FC<VideosProps> = ({ thumb, videoSrc }) => {
               {showVolumeSlider && (
                 <Box sx={{ width: 100, zIndex: 100 }}>
                   <Slider
-                    style={{ color: "#80FFF8" }}
+                    style={{ color: "#FAEDD4" }}
                     orientation="horizontal"
                     value={volume}
                     min={0}
@@ -215,6 +239,8 @@ const Videos: React.FC<VideosProps> = ({ thumb, videoSrc }) => {
       )}
     </div>
   );
-};
+});
+
+Videos.displayName = "Videos";
 
 export default Videos;

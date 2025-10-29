@@ -19,21 +19,21 @@ const menuStructure = [
   },
   {
     title: "Vídeos",
-    submenu: ["Vídeo 1", "Vídeo 2", "Vídeo 3"],
+    submenu: [""],
     caminho: "/vega-mangalo/videos",
-    submenuElements: ["video-1", "video-2", "video-3"],
+    submenuElements: [""],
   },
   {
     title: "Diferenciais",
-    submenu: [""],
+    submenu: ["APARTAMENTOS", "ÁREA COMUM"],
     caminho: "/vega-mangalo/diferenciais",
-    submenuElements: [""],
+    submenuElements: ["apartamentos", "area-comum"],
   },
   {
     title: "Memorial",
-    submenu: [""],
+    submenu: ["MEMORIAL", "QUADRA DE VAGAS"],
     caminho: "/vega-mangalo/memorial",
-    submenuElements: [""],
+    submenuElements: ["memorial", "vagas"],
   },
 ];
 

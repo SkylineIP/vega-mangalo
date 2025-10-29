@@ -16,33 +16,40 @@ const GoogleMap = () => {
   // o arquivo .env.local não sobe para produção, então você precisa configurar a chave da API no ambiente de produção também
 
   useEffect(() => {
-    if (submenu === "mapa2d") setIsSatellite(false);
-    if (submenu === "mapa-satelite") setIsSatellite(true);
+    // 🎯 FIX 1: Change "mapa2d" to "mapa-2d" (to match LocalizacaoPage)
+    if (submenu === "mapa-2d") {
+      setIsSatellite(false);
+    }
+    // 🎯 FIX 2: Check for the satellite string (which is already correct)
+    if (submenu === "mapa-satelite") {
+      setIsSatellite(true);
+    }
   }, [submenu]);
 
   return (
     <div className="relative w-full h-full">
       <APIProvider apiKey={API_KEY}>
         <Map
+          //-16.61181379570312, -49.322652825298356
           style={{ width: "100%", height: "100vh" }}
-          defaultCenter={{ lat: -22.739496629856745, lng: -41.944472392281355 }}
+          defaultCenter={{ lat: -16.61181379570312, lng: -49.322652825298356 }}
           // coordenadas do centro do mapa
           // você pode substituir por outras coordenadas
           defaultZoom={18}
           // nível de zoom inicial do mapa
-          disableDefaultUI={false}
+          disableDefaultUI={true}
           // desativa a interface padrão do Google Maps
           gestureHandling={"greedy"}
           // controla o comportamento de gestos do mapa
           mapTypeId={isSatellite ? "satellite" : "roadmap"}
-          // controla se o mapa é satélite ou 2D
+        // controla se o mapa é satélite ou 2D
         >
           <Marker
             // marcador no mapa
             icon={{
-              url: "/local/pin.svg", // caminho do ícone
+              url: "/pin.svg", // caminho do ícone
             }}
-            position={{ lat: -22.739496629856745, lng: -41.944472392281355 }}
+            position={{ lat: -16.61181379570312, lng: -49.322652825298356 }}
           />
         </Map>
       </APIProvider>
