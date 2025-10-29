@@ -46,7 +46,7 @@ const MenuPage: React.FC = () => {
               style={{
                 animationDelay: `${left.indexOf(item) * 0.4}s`,
               }}
-              className=" text-[#00978C] uppercase animate-fade-right font-bold transition-all h-full bg-white rounded-2xl text-2xl cursor-pointer hover:underline"
+              className=" text-[#00978C] uppercase fourk:text-5xl animate-fade-right font-bold transition-all h-full bg-white rounded-2xl text-2xl cursor-pointer hover:underline"
               onClick={() => handleClick(item)}
             >
               {item.title}
@@ -60,7 +60,7 @@ const MenuPage: React.FC = () => {
                 animationDelay: `${right.indexOf(item) * 0.4}s`,
               }}
               key={item.title}
-              className="text-[#00978C] uppercase animate-fade-left font-bold h-full transition-all bg-white rounded-2xl text-2xl cursor-pointer hover:underline"
+              className="text-[#00978C] uppercase fourk:text-5xl animate-fade-left font-bold h-full transition-all bg-white rounded-2xl text-2xl cursor-pointer hover:underline"
               onClick={() => handleClick(item)}
             >
               {item.title}

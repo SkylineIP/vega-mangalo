@@ -31,7 +31,7 @@ const Apartamentos = () => {
                 className="object-contain"
             />
         </div>
-        <div className="col-span-15 col-start-2 row-end-20 flex justify-between items-center">
+        <div className="col-span-15 col-start-2 row-end-20 gap-16 flex justify-between items-center">
             {buttons.map((button, index) => (
                 <button
                     key={index}
@@ -40,7 +40,7 @@ const Apartamentos = () => {
                         backgroundColor: currentImage === button.src ? "#00978C" : "white",
                         color: currentImage === button.src ? "white" : "#00978C",
                     }}
-                    className={`bg-white text-[#00978C] border-2 font-bold border-[#00978C] px-8 py-2 rounded-lg hover:bg-[#00978C] hover:text-white transition-all duration-300`}
+                    className={`bg-white text-[#00978C] h-full w-1/4 fourk:text-3xl border-2 font-bold border-[#00978C] px-8 py-2 rounded-lg hover:bg-[#00978C] hover:text-white transition-all duration-300`}
                 >
                     {button.name}
                 </button>

@@ -31,14 +31,14 @@ const Submenu: React.FC = memo(function Submenu() {
               );
             }}
             key={item}
-            className={`w-[20%] py-2 rounded-xl border-3 border-white  cursor-pointer ${
+            className={`w-[20%] py-2 rounded-xl border-3 h-[33%] border-white  cursor-pointer ${
               submenu === menuStructure[indexSelected].submenuElements[index]
                 ? "bg-white"
                 : "hover:bg-second/20"
             }`}
           >
             <p
-              className={`text-center uppercase font-bold desktop:text-[1em] text-[1em] ${
+              className={`text-center uppercase font-bold desktop:text-[1em] fourk:text-3xl text-[1em] ${
                 submenu === menuStructure[indexSelected].submenuElements[index]
                   ? "text-[#00978C]"
                   : "text-white"

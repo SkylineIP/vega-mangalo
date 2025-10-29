@@ -22,7 +22,7 @@ const MemorialView = () => {
                     className="object-contain"
                 />
             </div>
-            <div className="col-span-6 row-span-1 row-start-20 col-start-2 flex justify-between items-center">
+            <div className="col-span-6 row-span-1 row-start-20 col-start-2 gap-16 flex justify-between items-center">
                 <button
                     onClick={() => {
                         setSelectedButton("apartamento");
@@ -32,7 +32,7 @@ const MemorialView = () => {
                         backgroundColor: selectedButton === "apartamento" ? "#00978C" : "white",
                         color: selectedButton === "apartamento" ? "white" : "#00978C",
                     }}
-                    className={`bg-white uppercase text-[#00978C] border-2 font-bold border-[#00978C] px-8 py-2 rounded-lg hover:bg-[#00978C] hover:text-white transition-all duration-300`}
+                    className={`bg-white uppercase text-[#00978C] border-2 h-full w-1/2 fourk:text-3xl font-bold border-[#00978C] px-8 py-2 rounded-lg hover:bg-[#00978C] hover:text-white transition-all duration-300`}
                 >
                     apartamento
                 </button>
@@ -46,14 +46,14 @@ const MemorialView = () => {
                         backgroundColor: selectedButton === "area-comum" ? "#00978C" : "white",
                         color: selectedButton === "area-comum" ? "white" : "#00978C",
                     }}
-                    className={`bg-white uppercase text-[#00978C] border-2 font-bold border-[#00978C] px-8 py-2 rounded-lg hover:bg-[#00978C] hover:text-white transition-all duration-300`}
+                    className={`bg-white uppercase text-[#00978C] border-2 h-full w-1/2 fourk:text-3xl font-bold border-[#00978C] px-8 py-2 rounded-lg hover:bg-[#00978C] hover:text-white transition-all duration-300`}
                 >
                     Área Comum
                 </button>
             </div>
             {selectedButton === "area-comum" && (
                 <div className="col-span-7 col-start-11 px-10  row-start-20 relative row-span-1 flex justify-around items-center animate-fade">
-                    <span className="text-[#00978C] font-bold uppercase">
+                    <span className="text-[#00978C] fourk:text-3xl font-bold uppercase">
                         Arraste para ver mais!
                     </span>
                     {areaComumImages.map((index) => (
@@ -66,7 +66,7 @@ const MemorialView = () => {
                             style={{
                                 backgroundColor: selectedIndex === areaComumImages.indexOf(index) ? "#00978C" : "white",
                             }}
-                            className="w-10 h-10 cursor-pointer relative rounded-full border-2 border-[#00978C] overflow-hidden" />
+                            className="w-10 h-10 fourk:w-20 fourk:h-20 transition-colors duration-1000s cursor-pointer relative rounded-full border-2 border-[#00978C] overflow-hidden" />
                     ))}
                 </div>
             )}

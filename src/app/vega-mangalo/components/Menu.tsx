@@ -62,7 +62,7 @@ const Menu: React.FC = memo(function Menu() {
                   && "bg-white"
                 }`}
             >
-              <p className={`uppercase text-2xl font-bold ${indexSelected === index
+              <p className={`uppercase text-2xl fourk:text-4xl font-bold ${indexSelected === index
                 && "text-[#00978C]"
                 }`}>{item.title}</p>
             </button>

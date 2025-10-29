@@ -26,7 +26,7 @@ const QuadroView = () => {
                 />
             </div>
             <div className="col-span-8 col-start-10 px-10  row-start-20 relative row-span-1 flex justify-around items-center animate-fade">
-                <span className="text-[#00978C] font-bold uppercase">
+                <span className="text-[#00978C] fourk:text-3xl font-bold uppercase">
                     Arraste para ver mais!
                 </span>
                 {areaComumImages.map((index) => (
@@ -39,7 +39,7 @@ const QuadroView = () => {
                         style={{
                             backgroundColor: selectedIndex === areaComumImages.indexOf(index) ? "#00978C" : "white",
                         }}
-                        className="w-10 h-10 cursor-pointer relative rounded-full border-2 border-[#00978C] overflow-hidden" />
+                        className="w-10 h-10 fourk:w-20 fourk:h-20 cursor-pointer relative rounded-full border-2 border-[#00978C] overflow-hidden transition-colors duration-1000" />
                 ))}
             </div>
         </>
