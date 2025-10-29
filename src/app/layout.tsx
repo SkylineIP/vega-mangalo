@@ -6,9 +6,9 @@ import ThemeRegistry from "./materialUITheme";
 import { ContextSound } from "@/context/ContextSound";
 
 export const metadata: Metadata = {
-  title: "Skyline",
+  title: "Liv Mangalô",
   description:
-    "Modelo de Replicação apoiado na Documentação feita para o setor",
+    "Descubra o Liv Mangalô: seu novo lar de conforto, estilo e conveniência em um dos bairros mais desejados da cidade. Explore apartamentos modernos, áreas comuns incríveis e uma localização privilegiada que coloca tudo ao seu alcance.",
 };
 
 export default function RootLayout({
