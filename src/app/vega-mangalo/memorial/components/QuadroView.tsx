@@ -1,9 +1,11 @@
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
-import React from "react"
 
 const QuadroView = () => {
     const [selectedImage, setSelectedImage] = React.useState<string>("/memorial/1.png");
     const [selectedIndex, setSelectedIndex] = React.useState<number>(0);
+    const [startX, setStartX] = React.useState<number | null>(null);
+    const [isDragging, setIsDragging] = React.useState<boolean>(false);
     const areaComumImages = [
         "/memorial/quadra/1.png",
         "/memorial/quadra/2.png",
@@ -13,11 +15,63 @@ const QuadroView = () => {
         "/memorial/quadra/6.png",
         "/memorial/quadra/7.png",
     ]
+    const totalImages = areaComumImages.length;
+    const goToNext = () => {
+        const nextIndex = (selectedIndex + 1) % totalImages;
+        setSelectedIndex(nextIndex);
+    };
+    const goToPrev = () => {
+        const prevIndex = (selectedIndex - 1 + totalImages) % totalImages;
+        setSelectedIndex(prevIndex);
+    };
+    const handleDragStart = (e: React.MouseEvent | React.TouchEvent) => {
+        setIsDragging(true);
+        if ('touches' in e) {
+            setStartX(e.touches[0].clientX);
+        } else {
+            setStartX(e.clientX);
+        }
+    };
+    const handleDragEnd = (e: React.MouseEvent | React.TouchEvent) => {
+        setIsDragging(false);
+        setStartX(null);
+        let endX: number;
+        if ('changedTouches' in e) {
+            endX = e.changedTouches[0].clientX;
+        } else {
+            endX = e.clientX;
+        }
+        if (startX !== null) {
+            const diffX = startX - endX;
+            const threshold = 50;
 
+            if (diffX > threshold) {
+                goToNext();
+            } else if (diffX < -threshold) {
+                goToPrev();
+            }
+        }
+    };
+
+    const handleDragMove = (e: React.MouseEvent | React.TouchEvent) => {
+        if (!isDragging) return;
+        e.preventDefault();
+    };
+    useEffect(() => {
+        setSelectedImage(areaComumImages[selectedIndex]);
+    }, [selectedIndex]);
 
     return (
         <>
-            <div className="col-span-17 col-start-1 row-start-2 relative row-span-17 flex justify-center items-center animate-fade">
+            <div
+                onMouseDown={handleDragStart}
+                onMouseUp={handleDragEnd}
+                onMouseMove={handleDragMove}
+                onMouseLeave={handleDragEnd}
+                onTouchStart={handleDragStart}
+                onTouchEnd={handleDragEnd}
+                onTouchMove={handleDragMove}
+                className="col-span-17 col-start-1 row-start-2 relative row-span-17 flex justify-center items-center animate-fade">
                 <Image
                     src={selectedImage}
                     alt="Apartamentos"
