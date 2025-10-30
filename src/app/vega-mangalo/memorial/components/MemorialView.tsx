@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react"
+import React, { useEffect, useState, TouchEvent, MouseEvent } from 'react';
 import Image from "next/image";
 
 const MemorialView = () => {
@@ -28,7 +28,7 @@ const MemorialView = () => {
             setSelectedImage(areaComumImages[selectedIndex]);
         }
     }, [selectedIndex, selectedButton]);
-    const handleDragStart = (e: React.MouseEvent | React.TouchEvent) => {
+    const handleDragStart = (e: MouseEvent | TouchEvent) => {
         if (selectedButton !== "area-comum") return;
 
         setIsDragging(true);
@@ -38,7 +38,7 @@ const MemorialView = () => {
             setStartX(e.clientX);
         }
     };
-    const handleDragEnd = (e: React.MouseEvent | React.TouchEvent) => {
+    const handleDragEnd = (e: MouseEvent | TouchEvent) => {
         if (!isDragging || selectedButton !== "area-comum") return;
         setIsDragging(false);
         setStartX(null);
@@ -60,7 +60,7 @@ const MemorialView = () => {
         }
     };
 
-    const handleDragMove = (e: React.MouseEvent | React.TouchEvent) => {
+    const handleDragMove = (e: MouseEvent | TouchEvent) => {
         if (!isDragging) return;
         e.preventDefault();
     };

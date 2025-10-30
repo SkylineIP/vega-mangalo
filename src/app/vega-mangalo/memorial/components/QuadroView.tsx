@@ -1,11 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, MouseEvent, TouchEvent } from "react";
 import Image from "next/image";
 
 const QuadroView = () => {
-    const [selectedImage, setSelectedImage] = React.useState<string>("/memorial/1.png");
-    const [selectedIndex, setSelectedIndex] = React.useState<number>(0);
-    const [startX, setStartX] = React.useState<number | null>(null);
-    const [isDragging, setIsDragging] = React.useState<boolean>(false);
+    const [selectedImage, setSelectedImage] = useState<string>("/memorial/1.png");
+    const [selectedIndex, setSelectedIndex] = useState<number>(0);
+    const [startX, setStartX] = useState<number | null>(null);
+    const [isDragging, setIsDragging] = useState<boolean>(false);
     const areaComumImages = [
         "/memorial/quadra/1.png",
         "/memorial/quadra/2.png",
@@ -24,7 +24,7 @@ const QuadroView = () => {
         const prevIndex = (selectedIndex - 1 + totalImages) % totalImages;
         setSelectedIndex(prevIndex);
     };
-    const handleDragStart = (e: React.MouseEvent | React.TouchEvent) => {
+    const handleDragStart = (e: MouseEvent | TouchEvent) => {
         setIsDragging(true);
         if ('touches' in e) {
             setStartX(e.touches[0].clientX);
@@ -32,7 +32,7 @@ const QuadroView = () => {
             setStartX(e.clientX);
         }
     };
-    const handleDragEnd = (e: React.MouseEvent | React.TouchEvent) => {
+    const handleDragEnd = (e: MouseEvent | TouchEvent) => {
         setIsDragging(false);
         setStartX(null);
         let endX: number;
@@ -53,7 +53,7 @@ const QuadroView = () => {
         }
     };
 
-    const handleDragMove = (e: React.MouseEvent | React.TouchEvent) => {
+    const handleDragMove = (e: MouseEvent | TouchEvent) => {
         if (!isDragging) return;
         e.preventDefault();
     };

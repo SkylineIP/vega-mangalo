@@ -46,7 +46,6 @@ const ProjetoPage: React.FC = () => {
             return;
         }
         setCurIndex(index);
-        console.log("Clicked on group with index:", index);
     }
 
     const targetPosition = curIndex !== null ? RESPONSIVE_POSITIONS[curIndex] : null;
