@@ -6,7 +6,6 @@ import Submenu from "../components/Submenu";
 import { useContextDefault } from "@/context/Context";
 import GoogleMap from "../../components/GoogleMaps";
 import Image from "next/image";
-import posthog from "posthog-js";
 
 const LocalizacaoPage: React.FC = () => {
   const context = useContextDefault();

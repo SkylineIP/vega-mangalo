@@ -5,12 +5,11 @@ import Submenu from "../components/Submenu"
 import { useContextDefault } from "@/context/Context"
 import MemorialView from "./components/MemorialView"
 import QuadroView from "./components/QuadroView"
-import posthog from "posthog-js"
 
 const MemorialPage = () => {
     const context = useContextDefault();
     const submenu = context?.submenu;
-    
+
     return (
         <div className="w-full h-full grid grid-cols-24 grid-rows-24">
             <Menu />

@@ -21,7 +21,7 @@ const MenuPage: React.FC = () => {
       setSubmenuAndSelected(item.caminho, item.submenuElements[0]);
       router.push(item.caminho);
     }
-    posthog.capture("click_menu_button", { button: item.title});
+    posthog.capture("click_menu_button", { button: item.title });
   };
 
   useEffect(() => {
