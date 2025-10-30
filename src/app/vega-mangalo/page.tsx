@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation";
 import { useContextDefault } from "@/context/Context";
 import menuStructure from "../utils/menuStructure";
 import Image from "next/image";
+import posthog from "posthog-js";
 
 const MenuPage: React.FC = () => {
   const router = useRouter();
@@ -14,11 +15,13 @@ const MenuPage: React.FC = () => {
   const handleClick = (item: {
     caminho: string;
     submenuElements: string[];
+    title: string;
   }) => {
     if (setSubmenuAndSelected) {
       setSubmenuAndSelected(item.caminho, item.submenuElements[0]);
       router.push(item.caminho);
     }
+    posthog.capture("click_menu_button", { button: item.title});
   };
 
   useEffect(() => {

@@ -6,11 +6,11 @@ import Submenu from "../components/Submenu";
 import { useContextDefault } from "@/context/Context";
 import GoogleMap from "../../components/GoogleMaps";
 import Image from "next/image";
+import posthog from "posthog-js";
 
 const LocalizacaoPage: React.FC = () => {
   const context = useContextDefault();
   const submenu = context?.submenu;
-
   return (
     <div className="w-full h-screen bg-background grid grid-cols-24 min-h-[800px] min-w-[1200px] grid-rows-24">
       <Menu />

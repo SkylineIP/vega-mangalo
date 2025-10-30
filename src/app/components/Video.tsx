@@ -1,6 +1,7 @@
 "use client";
 
 import { forwardRef, useImperativeHandle, useRef, useState } from "react";
+import posthog from "posthog-js";
 import { IconButton } from "@mui/material";
 import {
   PlayArrow,
@@ -164,6 +165,9 @@ const Videos = forwardRef<VideoControls, VideosProps>(({ thumb, videoSrc, noCont
           setCurrentTime(Number(videoRef.current?.currentTime.toFixed(2)) || 0)
         }
         onLoadedMetadata={() => setDuration(videoRef.current?.duration || 0)}
+        onPlay={() => {
+          posthog.capture('play_video', { videoSrc });
+        }}
       />
       {/* Overlay dos controles */}
       {showControls && !noControls && (

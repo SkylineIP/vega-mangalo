@@ -4,6 +4,7 @@ import Menu from "../components/Menu"
 import Submenu from "../components/Submenu"
 import { useContextDefault } from "@/context/Context"
 import Image from "next/image"
+import posthog from "posthog-js"
 
 const DiferenciaisPage = () => {
     const context = useContextDefault();

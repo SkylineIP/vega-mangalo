@@ -4,6 +4,7 @@ import React from "react";
 import { ContextDefault } from "../context/Context";
 import ThemeRegistry from "./materialUITheme";
 import { ContextSound } from "@/context/ContextSound";
+import { PHProvider } from "./providers/posthog";
 
 export const metadata: Metadata = {
   title: "Liv Mangalô",
@@ -20,12 +21,14 @@ export default function RootLayout({
     <html lang="pt-BR">
       <body className="bg-background text-foreground font-bricolage">
         <React.StrictMode>
-          <ContextSound>
-            <ContextDefault>
-              <ThemeRegistry>{children}</ThemeRegistry>
-              {/* pode-se colocar a barra lateral aqui, porque ela aparece em todas as telas, menos na rota '/' e na rota '/menu'*/}
-            </ContextDefault>
-          </ContextSound>
+          <PHProvider>
+            <ContextSound>
+              <ContextDefault>
+                <ThemeRegistry>{children}</ThemeRegistry>
+                {/* pode-se colocar a barra lateral aqui, porque ela aparece em todas as telas, menos na rota '/' e na rota '/menu'*/}
+              </ContextDefault>
+            </ContextSound>
+          </PHProvider>
         </React.StrictMode>
       </body>
     </html>

@@ -1,5 +1,5 @@
 "use client";
-
+import posthog from "posthog-js";
 import { useRouter } from "next/navigation";
 import * as React from "react";
 import { useContextDefault } from "@/context/Context";
@@ -29,6 +29,7 @@ const Home: React.FC = () => {
       </div>
       <div onClick={() => {
         handleClick();
+        posthog.capture("click_touch_button_homepage");
       }} className="col-span-4 row-span-3 row-start-20 animate-pulse col-start-11 relative cursor-pointer hover:scale-105 transition-all">
         <Image
           src="/descanso/touch.png"

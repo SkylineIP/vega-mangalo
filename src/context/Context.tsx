@@ -4,6 +4,7 @@ import { createContext, useContext, useState, ReactNode } from "react";
 import { usePathname } from "next/navigation";
 import menuStructure from "../app/utils/menuStructure";
 import { useContextSound } from "./ContextSound";
+import posthog from "posthog-js";
 
 export interface Context {
   submenu: string;
@@ -53,6 +54,7 @@ export const ContextDefault = ({ children }: { children: ReactNode }) => {
   const setSubmenuAndSelected = (selected: string, submenu: string) => {
     setMenu({ selected, submenu });
     if (playSound) playSound();
+    posthog.capture("navigate_menu", { to: selected, submenu: submenu });
   };
 
   return (

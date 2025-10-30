@@ -4,6 +4,7 @@ import React, { useRef, useState } from "react";
 import Videos, { VideoControls } from "../../components/Video";
 import Menu from "../components/Menu";
 import Image from "next/image";
+import posthog from "posthog-js";
 
 const Serie: React.FC = () => {
   const videoRef = useRef<VideoControls | null>(null);
@@ -24,6 +25,7 @@ const Serie: React.FC = () => {
     } else if (name === "rewind") {
       videoRef.current?.rewind();
     }
+    posthog.capture("click_video_control_button", { button: name });
   };
   return (
     <div className="w-full h-full bg-background grid grid-cols-24 grid-rows-24 ">
@@ -43,6 +45,7 @@ const Serie: React.FC = () => {
               key={button.name}
               className="relative w-12 h-12 hover:scale-[1.02] transition-transform"
               onClick={() => handleNavClick(button.name)}
+
             >
               <Image
                 src={button.src}

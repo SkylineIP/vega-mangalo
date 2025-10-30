@@ -4,6 +4,7 @@ import React, { memo, useEffect, useState } from "react";
 import { useContextDefault } from "@/context/Context";
 import menuStructure from "../../utils/menuStructure";
 import { usePathname } from "next/navigation";
+import posthog from "posthog-js";
 
 const Submenu: React.FC = memo(function Submenu() {
   const [indexSelected, setIndex] = useState(0);
@@ -25,6 +26,7 @@ const Submenu: React.FC = memo(function Submenu() {
         return (
           <button
             onClick={() => {
+              posthog.capture("click_touch_button_submenu", { submenu: item });
               setSubmenu?.(
                 menuStructure[indexSelected].caminho,
                 menuStructure[indexSelected].submenuElements[index],

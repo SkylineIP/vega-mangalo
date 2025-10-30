@@ -8,6 +8,7 @@ import Submenu from "../components/Submenu";
 import BolotarioSvg from "./components/BolotarioSvg";
 import Compare from "./components/Compare";
 import Apartamentos from "./components/Apartamentos";
+import posthog from "posthog-js";
 
 const ProjetoPage: React.FC = () => {
     const context = useContextDefault();
@@ -46,6 +47,7 @@ const ProjetoPage: React.FC = () => {
             return;
         }
         setCurIndex(index);
+        posthog.capture("click_bolotario_svg", { index: index });
     }
 
     const targetPosition = curIndex !== null ? RESPONSIVE_POSITIONS[curIndex] : null;

@@ -1,5 +1,5 @@
 "use client";
-
+import posthog from "posthog-js";
 import React, { memo } from "react";
 import menuStructure from "../../utils/menuStructure";
 import { usePathname, useRouter } from "next/navigation";
@@ -27,11 +27,13 @@ const Menu: React.FC = memo(function Menu() {
   const handleClick = (item: {
     caminho: string;
     submenuElements: string[];
+    title: string;
   }) => {
     if (setSubmenuAndSelected && playSound) {
       setSubmenuAndSelected(item.caminho, item.submenuElements[0]);
       router.push(item.caminho);
     }
+    posthog.capture("click_touch_button_menu", { menu: item.title });
   };
 
   const indexSelected = menuStructure.findIndex((item: { caminho: string }) =>
@@ -72,6 +74,7 @@ const Menu: React.FC = memo(function Menu() {
       <div
         className="row-span-2 col-span-1 col-start-4 row-start-22 relative flex items-center justify-center animate-fade animate-duration-[2500ms] text-black bg-background/70 cursor-pointer"
         onClick={() => {
+          posthog.capture("click_home_button_menu");
           setSubmenuAndSelected?.("/vega-mangalo", ""); // Set state before navigation
           router.push("/vega-mangalo"); // Redireciona para a página inicial
         }}
